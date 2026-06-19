@@ -1,0 +1,8 @@
+- factory management game
+
+  extract bosons and fermions
+  use these to generate power
+  which help extract more bosons and fermions
+
+- future ideas:
+  add rival alien civs
