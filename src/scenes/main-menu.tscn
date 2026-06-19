@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://d3dqyoaeaefs6"]
 
-[ext_resource type="Script" uid="uid://bj1cqu5vwwwjj" path="res://src/main-menu.gd" id="1_wywc0"]
+[ext_resource type="Script" uid="uid://bj1cqu5vwwwjj" path="res://src/scripts/main-menu.gd" id="1_fqmgj"]
 
 [node name="MainMenu" type="Node2D" unique_id=2128572243]
-script = ExtResource("1_wywc0")
+script = ExtResource("1_fqmgj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1293568746]
 
