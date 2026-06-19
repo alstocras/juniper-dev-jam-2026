@@ -1,5 +1,5 @@
-# project name
-stuff about the project
+# boson and fermion extraction game
+extract bosons and fermions
 ## how to contribute
 always use PRs and use the following guidelines
 - `patch:` for small fixes
