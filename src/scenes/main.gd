@@ -1,8 +1,6 @@
 extends Node2D;
 
-var basicExtractor = preload("res://src/scenes/extractor.tscn");
 var mousePos;
-var obj;
 
 func _process(delta: float) -> void:
 	mousePos = $TileMapLayer.get_local_mouse_position();
