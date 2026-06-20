@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d3nghnos7s7my"]
+
+[ext_resource type="Texture2D" uid="uid://dfkdsvqm1dv3u" path="res://assets/sprites/objects/starter-extractor.png" id="1_rry7v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_swdw4"]
+size = Vector2(32, 32)
+
+[node name="Extractor" type="RigidBody2D" unique_id=744359855]
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1043737817]
+position = Vector2(-8, -8)
+texture = ExtResource("1_rry7v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1006593903]
+position = Vector2(-8, -8)
+shape = SubResource("RectangleShape2D_swdw4")
