@@ -1,13 +1,16 @@
 extends CharacterBody2D;
 @export var speed: float = 400;
-var direction: Vector2;
+@export var rotationSpeed = 3;
+var rotationDirection: float;
 
 func _physics_process(delta: float) -> void:
-	direction = Input.get_vector("moveWest", "moveEast", "moveNorth", "moveSouth");
+	var targetDirection = get_global_mouse_position() - global_position
+	var targetAngle = targetDirection.angle()
+	rotationDirection = Input.get_axis("moveWest", "moveEast");
 	
-	if direction != Vector2.ZERO:
-		velocity = direction * speed;
-	else:
-		velocity = velocity.move_toward(Vector2.ZERO, speed);
+	rotation += rotationDirection * rotationSpeed * delta
+	velocity = transform.x * speed * Input.get_axis("moveSouth", "moveNorth")
 	
+	$AnimatedSprite2D.play("idle");
+		
 	move_and_slide();
