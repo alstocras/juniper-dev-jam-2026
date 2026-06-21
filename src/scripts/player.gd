@@ -4,6 +4,7 @@ extends CharacterBody2D;
 var rotationDirection: float;
 
 func _physics_process(delta: float) -> void:
+	Global.playerPosition = position;
 	var targetDirection = get_global_mouse_position() - global_position
 	var targetAngle = targetDirection.angle()
 	rotationDirection = Input.get_axis("moveWest", "moveEast");

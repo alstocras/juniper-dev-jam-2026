@@ -15,6 +15,10 @@ run/main_scene="uid://d3dqyoaeaefs6"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://wd2b3gcmqdvd"
+
 [input]
 
 moveNorth={
