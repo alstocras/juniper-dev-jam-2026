@@ -32,9 +32,9 @@ func _process(delta: float) -> void:
 				fermionCount += (0.1 * spin);
 	fermionLabel.text = "fermions: " + str(round(fermionCount))
 	
-	if Input.is_action_just_pressed("removeObj"):
+	if Input.is_action_pressed("removeObj"):
 		tMap.erase_cell(activeCell)
 		
-	if Input.is_action_just_pressed("placeObj"):
+	if Input.is_action_pressed("placeObj"):
 		if not tMap.get_cell_source_id(activeCell) == 1:
 			tMap.set_cell(activeCell, 0, Vector2i(0, 0), 1)
