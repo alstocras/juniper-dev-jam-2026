@@ -206,5 +206,5 @@ offset_bottom = 648.0
 theme_override_colors/font_color = Color(0.94509804, 0.32941177, 0.32941177, 1)
 theme_override_fonts/font = ExtResource("7_2lg1k")
 theme_override_font_sizes/font_size = 32
-text = "Not enough iron to build extractor (you need 20)"
+text = "Not enough iron to build extractor (20)"
 vertical_alignment = 1
