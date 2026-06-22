@@ -23,18 +23,21 @@ func _process(delta: float) -> void:
 			if terrain.get_cell_source_id(Vector2i(x, y)) == 2 and tMap.get_cell_source_id(Vector2i(x, y)) == 0:
 				var spin = bosonSpins.pick_random();
 				bosonCount += (0.1 * spin);
-	bosonLabel.text = "bosons: " + str(round(bosonCount))
+	bosonLabel.text = str(round(bosonCount))
 	
 	for x in range(-lookrange, lookrange):
 		for y in range(-lookrange, lookrange):
 			if terrain.get_cell_source_id(Vector2i(x, y)) == 1 and tMap.get_cell_source_id(Vector2i(x, y)) == 0:
 				var spin = fermionSpins.pick_random();
 				fermionCount += (0.1 * spin);
-	fermionLabel.text = "fermions: " + str(round(fermionCount))
+	fermionLabel.text = str(round(fermionCount))
 	
-	if Input.is_action_just_pressed("removeObj"):
+	if Input.is_action_pressed("removeObj"):
 		tMap.erase_cell(activeCell)
 		
-	if Input.is_action_just_pressed("placeObj"):
+	if Input.is_action_pressed("placeObj"):
 		if not tMap.get_cell_source_id(activeCell) == 1:
 			tMap.set_cell(activeCell, 0, Vector2i(0, 0), 1)
+			
+	if Input.is_action_pressed("placeConv"):
+		tMap.set_cell(activeCell, 1, Vector2i(0, 0), 1);
