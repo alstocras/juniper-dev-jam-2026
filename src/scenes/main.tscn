@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cwbhacosbf136" path="res://assets/sprites/terrain/boson-ore.png" id="3_o81g6"]
 [ext_resource type="FontFile" uid="uid://6n3i0td75b8m" path="res://assets/fonts/jbmono.ttf" id="7_2lg1k"]
 [ext_resource type="Texture2D" uid="uid://bixnpjfwdwxlq" path="res://assets/sprites/terrain/wall.png" id="7_5lsyw"]
+[ext_resource type="Texture2D" uid="uid://bdn45d2clw5un" path="res://assets/sprites/objects/boson.png" id="9_lp058"]
+[ext_resource type="Texture2D" uid="uid://dcetdmah4250n" path="res://assets/sprites/objects/fermion.png" id="10_24j03"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5dlwx"]
 texture = ExtResource("3_32aa5")
@@ -122,23 +124,47 @@ tile_set = SubResource("TileSet_lp058")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1659415920]
 
 [node name="Bosons" type="Label" parent="CanvasLayer" unique_id=1989675490]
-offset_left = -1.0
+offset_left = 1.0
 offset_top = 1.0
-offset_right = 1151.0
+offset_right = 1105.0
 offset_bottom = 50.0
 theme_override_fonts/font = ExtResource("7_2lg1k")
 theme_override_font_sizes/font_size = 32
-text = "bosons: 0"
+text = "0"
 horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Fermions" type="Label" parent="CanvasLayer" unique_id=762150349]
-offset_left = 4.0
 offset_top = 40.0
-offset_right = 1150.0
+offset_right = 1104.0
 offset_bottom = 89.0
 theme_override_fonts/font = ExtResource("7_2lg1k")
 theme_override_font_sizes/font_size = 32
-text = "fermions: 0"
+text = "0"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="BosonIcon" type="TextureRect" parent="CanvasLayer" unique_id=668095864]
+offset_left = 1105.0
+offset_top = 3.0
+offset_right = 1150.0
+offset_bottom = 43.0
+texture = ExtResource("9_lp058")
+
+[node name="FermionIcon" type="TextureRect" parent="CanvasLayer" unique_id=473797638]
+offset_left = 1104.0
+offset_top = 45.0
+offset_right = 1149.0
+offset_bottom = 85.0
+texture = ExtResource("10_24j03")
+
+[node name="BlockSelectionPanel" type="Panel" parent="CanvasLayer" unique_id=2033092961]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -257.0
+offset_top = -282.0
+grow_horizontal = 0
+grow_vertical = 0
