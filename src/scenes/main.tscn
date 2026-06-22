@@ -127,10 +127,10 @@ tile_set = SubResource("TileSet_lp058")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1659415920]
 
 [node name="Bosons" type="Label" parent="CanvasLayer" unique_id=1989675490]
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 1105.0
-offset_bottom = 50.0
+offset_left = -4.0
+offset_top = 6.0
+offset_right = 1100.0
+offset_bottom = 55.0
 theme_override_fonts/font = ExtResource("7_2lg1k")
 theme_override_font_sizes/font_size = 32
 text = "0"
@@ -138,9 +138,10 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Fermions" type="Label" parent="CanvasLayer" unique_id=762150349]
-offset_top = 40.0
-offset_right = 1104.0
-offset_bottom = 89.0
+offset_left = -5.0
+offset_top = 48.0
+offset_right = 1099.0
+offset_bottom = 97.0
 theme_override_fonts/font = ExtResource("7_2lg1k")
 theme_override_font_sizes/font_size = 32
 text = "0"
