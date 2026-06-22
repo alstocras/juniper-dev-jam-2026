@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://d30b80ur86qfq" path="res://assets/sprites/terrain/fermion-ore.png" id="3_dbro3"]
 [ext_resource type="Texture2D" uid="uid://cwbhacosbf136" path="res://assets/sprites/terrain/boson-ore.png" id="3_o81g6"]
 [ext_resource type="Texture2D" uid="uid://dj4msjpq5corl" path="res://assets/sprites/terrain/iron-ore.png" id="5_p1ia5"]
-[ext_resource type="PackedScene" uid="uid://c17du3h3pdwdv" path="res://src/scenes/conveyor.tscn" id="6_24j03"]
 [ext_resource type="FontFile" uid="uid://6n3i0td75b8m" path="res://assets/fonts/jbmono.ttf" id="7_2lg1k"]
 [ext_resource type="Texture2D" uid="uid://bixnpjfwdwxlq" path="res://assets/sprites/terrain/wall.png" id="7_5lsyw"]
 [ext_resource type="Texture2D" uid="uid://bdn45d2clw5un" path="res://assets/sprites/objects/boson.png" id="9_lp058"]
@@ -101,13 +100,8 @@ sources/3 = SubResource("TileSetAtlasSource_kbdt0")
 resource_name = "extractors"
 scenes/1/scene = ExtResource("2_5dlwx")
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_p1ia5"]
-resource_name = "conveyors"
-scenes/1/scene = ExtResource("6_24j03")
-
 [sub_resource type="TileSet" id="TileSet_dbro3"]
 sources/0 = SubResource("TileSetScenesCollectionSource_o81g6")
-sources/1 = SubResource("TileSetScenesCollectionSource_p1ia5")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kokaf"]
 texture = ExtResource("7_5lsyw")
