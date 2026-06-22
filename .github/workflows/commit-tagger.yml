@@ -115,10 +115,10 @@ jobs:
         with:
           tag_name: ${{ steps.tagger.outputs.version }}
           files: |
-            dist/$EXPORT_NAME-linux.zip
-            dist/$EXPORT_NAME-windows.zip
-            dist/$EXPORT_NAME-macos.zip
-            dist/$EXPORT_NAME-web.zip
+            dist/${{ env.EXPORT_NAME }}-linux.zip
+            dist/${{ env.EXPORT_NAME }}-windows.zip
+            dist/${{ env.EXPORT_NAME }}-macos.zip
+            dist/${{ env.EXPORT_NAME }}-web.zip
           generate_release_notes: true
 
       - name: Setup butler
