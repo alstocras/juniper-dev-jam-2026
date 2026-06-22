@@ -1,44 +1,124 @@
-# This is a basic workflow to help you get started with Actions
-name: Commit Tagger
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
+name: Build & Release
 
-  # Allows you to run this workflow manually from the Actions tab
+on:
+  push:
+    branches: ["main"]
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+env:
+  GODOT_VERSION: "4.6"
+  EXPORT_NAME: "angular-momentum"
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+jobs:
+  tag-and-release:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - run: |
-            echo "tagging commit..."
-            latestTag=$(git tag --sort=-v:refname | head -n 1);
-            version=${latestTag#v};
-            commitMessage="${{ github.event.head_commit.message }}";
-            IFS="." read release feature patch <<< "$version";
 
-            if [[ $commitMessage == "release:"* ]]; then
-              release=$((release + 1));
-              feature=0;
-              patch=0;
-            elif [[ $commitMessage == "feature:"* ]]; then
-              feature=$((feature + 1));
-              patch=0;
-            else
-              patch=$((patch + 1));
-            fi
+      - name: Generate version tag
+        id: tagger
+        run: |
+          latestTag=$(git tag --sort=-v:refname | head -n 1)
+          if [ -z "$latestTag" ]; then
+            latestTag="v0.0.0"
+          fi
+          version=${latestTag#v}
+          commitMessage="${{ github.event.head_commit.message }}"
+          IFS="." read -r release feature patch <<< "$version"
 
-            newVersionTag="v$release.$feature.$patch";
-            git tag $newVersionTag;
-            git push origin $newVersionTag;
+          if [[ $commitMessage == "release:"* ]]; then
+            release=$((release + 1))
+            feature=0
+            patch=0
+            echo "is_release=true" >> "$GITHUB_OUTPUT"
+          elif [[ $commitMessage == "feature:"* ]]; then
+            feature=$((feature + 1))
+            patch=0
+            echo "is_release=false" >> "$GITHUB_OUTPUT"
+          else
+            patch=$((patch + 1))
+            echo "is_release=false" >> "$GITHUB_OUTPUT"
+          fi
+
+          newVersionTag="v$release.$feature.$patch"
+          echo "version=$newVersionTag" >> "$GITHUB_OUTPUT"
+          git tag "$newVersionTag"
+          git push origin "$newVersionTag"
+
+      - name: Cache Godot
+        id: cache-godot
+        uses: actions/cache@v4
+        with:
+          path: godot-cache
+          key: godot-${{ env.GODOT_VERSION }}
+
+      - name: Setup Godot
+        if: steps.cache-godot.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p godot-cache/export_templates
+          wget -q "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip"
+          unzip -q "Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip" -d godot-cache/
+          chmod +x "godot-cache/Godot_v${GODOT_VERSION}-stable_linux.x86_64"
+          wget -q "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_export_templates.tpz"
+          unzip -q "Godot_v${GODOT_VERSION}-stable_export_templates.tpz" -d godot-cache/export_templates/
+          if [ -d godot-cache/export_templates/templates ]; then
+            mv godot-cache/export_templates/templates/* godot-cache/export_templates/
+            rmdir godot-cache/export_templates/templates/
+          fi
+
+      - name: Install Godot
+        run: |
+          mkdir -p ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+          cp -r godot-cache/export_templates/* ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable/
+          sudo cp "godot-cache/Godot_v${GODOT_VERSION}-stable_linux.x86_64" /usr/local/bin/godot
+
+      - name: Export Linux
+        run: |
+          mkdir -p dist/linux
+          godot --headless --export-release "Linux" "dist/linux/$EXPORT_NAME.x86_64"
+
+      - name: Export Windows
+        run: |
+          mkdir -p dist/windows
+          godot --headless --export-release "Windows Desktop" "dist/windows/$EXPORT_NAME.exe"
+
+      - name: Export macOS
+        run: |
+          mkdir -p dist/macos
+          godot --headless --export-release "macOS" "dist/macos/$EXPORT_NAME.zip"
+
+      - name: Export Web
+        run: |
+          mkdir -p dist/web
+          godot --headless --export-release "Web" "dist/web/index.html"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tagger.outputs.version }}
+          files: |
+            dist/linux/*
+            dist/windows/*
+            dist/macos/*
+            dist/web/*
+          generate_release_notes: true
+
+      - name: Setup butler
+        if: steps.tagger.outputs.is_release == 'true'
+        run: |
+          wget -q https://broth.itch.ovh/butler/linux-amd64/LATEST -O butler.zip
+          unzip -q butler.zip -d butler
+          chmod +x butler/butler
+          echo "$PWD/butler" >> "$GITHUB_PATH"
+
+      - name: Deploy to Itch.io
+        if: steps.tagger.outputs.is_release == 'true'
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        run: |
+          butler push "dist/linux" "${{ vars.ITCH_USER }}/${{ vars.ITCH_GAME }}:linux" --userversion "${{ steps.tagger.outputs.version }}"
+          butler push "dist/windows" "${{ vars.ITCH_USER }}/${{ vars.ITCH_GAME }}:windows" --userversion "${{ steps.tagger.outputs.version }}"
+          butler push "dist/macos" "${{ vars.ITCH_USER }}/${{ vars.ITCH_GAME }}:osx" --userversion "${{ steps.tagger.outputs.version }}"
+          butler push "dist/web" "${{ vars.ITCH_USER }}/${{ vars.ITCH_GAME }}:web" --userversion "${{ steps.tagger.outputs.version }}"
