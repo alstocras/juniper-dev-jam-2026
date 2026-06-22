@@ -94,15 +94,31 @@ jobs:
           mkdir -p dist/web
           godot --headless --export-release "Web" "dist/web/index.html"
 
+      - name: Package Linux
+        run: |
+          cd dist/linux && zip -r ../$EXPORT_NAME-linux.zip . && cd ../..
+
+      - name: Package Windows
+        run: |
+          cd dist/windows && zip -r ../$EXPORT_NAME-windows.zip . && cd ../..
+
+      - name: Package macOS
+        run: |
+          cd dist/macos && zip -r ../$EXPORT_NAME-macos.zip . && cd ../..
+
+      - name: Package Web
+        run: |
+          cd dist/web && zip -r ../$EXPORT_NAME-web.zip . && cd ../..
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.tagger.outputs.version }}
           files: |
-            dist/linux/*
-            dist/windows/*
-            dist/macos/*
-            dist/web/*
+            dist/$EXPORT_NAME-linux.zip
+            dist/$EXPORT_NAME-windows.zip
+            dist/$EXPORT_NAME-macos.zip
+            dist/$EXPORT_NAME-web.zip
           generate_release_notes: true
 
       - name: Setup butler
