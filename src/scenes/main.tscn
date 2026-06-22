@@ -146,10 +146,9 @@ tile_set = SubResource("TileSet_lp058")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1659415920]
 
 [node name="Bosons" type="Label" parent="CanvasLayer" unique_id=1989675490]
-offset_left = -4.0
-offset_top = 6.0
-offset_right = 1100.0
-offset_bottom = 55.0
+offset_top = 45.0
+offset_right = 1104.0
+offset_bottom = 94.0
 theme_override_fonts/font = ExtResource("7_2lg1k")
 theme_override_font_sizes/font_size = 32
 text = "0"
@@ -157,34 +156,8 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Fermions" type="Label" parent="CanvasLayer" unique_id=762150349]
-offset_left = -5.0
-offset_top = 48.0
-offset_right = 1099.0
-offset_bottom = 97.0
-theme_override_fonts/font = ExtResource("7_2lg1k")
-theme_override_font_sizes/font_size = 32
-text = "0"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="BosonIcon" type="TextureRect" parent="CanvasLayer" unique_id=668095864]
-offset_left = 1105.0
-offset_top = 3.0
-offset_right = 1150.0
-offset_bottom = 43.0
-texture = ExtResource("9_lp058")
-
-[node name="FermionIcon" type="TextureRect" parent="CanvasLayer" unique_id=473797638]
-offset_left = 1104.0
-offset_top = 45.0
-offset_right = 1149.0
-offset_bottom = 85.0
-texture = ExtResource("10_24j03")
-
-[node name="Iron" type="Label" parent="CanvasLayer" unique_id=12751868]
-offset_left = -5.0
 offset_top = 88.0
-offset_right = 1099.0
+offset_right = 1104.0
 offset_bottom = 137.0
 theme_override_fonts/font = ExtResource("7_2lg1k")
 theme_override_font_sizes/font_size = 32
@@ -192,9 +165,31 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="IronIcon" type="TextureRect" parent="CanvasLayer" unique_id=627426193]
+[node name="BosonIcon" type="TextureRect" parent="CanvasLayer" unique_id=668095864]
+offset_left = 1107.0
+offset_top = 44.0
+offset_right = 1152.0
+offset_bottom = 84.0
+texture = ExtResource("9_lp058")
+
+[node name="FermionIcon" type="TextureRect" parent="CanvasLayer" unique_id=473797638]
 offset_left = 1104.0
-offset_top = 88.0
+offset_top = 91.0
 offset_right = 1149.0
-offset_bottom = 128.0
+offset_bottom = 131.0
+texture = ExtResource("10_24j03")
+
+[node name="Iron" type="Label" parent="CanvasLayer" unique_id=12751868]
+offset_right = 1104.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("7_2lg1k")
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="IronIcon" type="TextureRect" parent="CanvasLayer" unique_id=627426193]
+offset_left = 1107.0
+offset_right = 1152.0
+offset_bottom = 40.0
 texture = ExtResource("12_p1ia5")

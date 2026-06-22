@@ -45,7 +45,7 @@ func _process(delta: float) -> void:
 					tMap.set_cell(activeCell, 0, Vector2i(0, 0), 1);
 					ironCount -= extractorCost;
 			else:
-				print("denied!")
+				pass
 		
 	for x in range(-lookrange, lookrange):
 		for y in range(-lookrange, lookrange):
