@@ -39,6 +39,5 @@ func _process(delta: float) -> void:
 		if not tMap.get_cell_source_id(activeCell) == 1:
 			tMap.set_cell(activeCell, 0, Vector2i(0, 0), 1)
 			
-	
 	if Input.is_action_pressed("placeConv"):
 		tMap.set_cell(activeCell, 1, Vector2i(0, 0), 1);
