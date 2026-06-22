@@ -5,6 +5,7 @@ var activeCell;
 var lookrange := 40
 @onready var tMap = $Buildings;
 @onready var terrain = $Terrain;
+var extractorCost: float = 5;
 
 @onready var bosonLabel = $CanvasLayer/Bosons;
 var bosonCount: float;
@@ -39,15 +40,19 @@ func _process(delta: float) -> void:
 		tMap.erase_cell(activeCell)
 		
 	if Input.is_action_pressed("placeObj"):
-		if not tMap.get_cell_source_id(activeCell) == 1:
-			tMap.set_cell(activeCell, 0, Vector2i(0, 0), 1)
-			
-	if Input.is_action_pressed("placeConv"):
-		tMap.set_cell(activeCell, 1, Vector2i(0, 0), 1);
+			if ironCount >= extractorCost:
+				if not tMap.get_cell_source_id(activeCell) == 1:
+					tMap.set_cell(activeCell, 0, Vector2i(0, 0), 1);
+					ironCount -= extractorCost;
+			else:
+				print("denied!")
 		
 	for x in range(-lookrange, lookrange):
 		for y in range(-lookrange, lookrange):
-			if (Input.is_action_just_pressed("mineIron") or tMap.get_cell_source_id(Vector2i(x, y)) == 0) and terrain.get_cell_source_id(activeCell) == 3:
-				ironCount += 0.01;
+			if terrain.get_cell_source_id(Vector2i(x, y)) == 3 and tMap.get_cell_source_id(Vector2i(x, y)) == 0:
+				ironCount += 0.1;
+				
+	if Input.is_action_pressed("mineIron") and terrain.get_cell_source_id(activeCell) == 3:
+		ironCount += 0.01;
 	ironLabel.text = str(round(ironCount));
 	
