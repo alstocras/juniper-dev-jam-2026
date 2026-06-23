@@ -214,7 +214,7 @@ offset_bottom = 648.0
 theme_override_colors/font_color = Color(0.94509804, 0.32941177, 0.32941177, 1)
 theme_override_fonts/font = ExtResource("7_2lg1k")
 theme_override_font_sizes/font_size = 32
-text = "Not enough iron to build extractor (20)"
+text = "not enough iron to build extractor (20)"
 vertical_alignment = 1
 
 [node name="Energy" type="Label" parent="CanvasLayer" unique_id=1462551571]
@@ -226,4 +226,99 @@ theme_override_fonts/font = ExtResource("7_2lg1k")
 theme_override_font_sizes/font_size = 32
 text = "0 eV"
 horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HelpMenu" type="ColorRect" parent="CanvasLayer" unique_id=254181593]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -413.5
+offset_top = -260.0
+offset_right = 413.5
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.60784316)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/HelpMenu" unique_id=1281928766]
+layout_mode = 0
+offset_right = 827.5
+offset_bottom = 518.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HelpMenu/ScrollContainer" unique_id=1727542440]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Title" type="Label" parent="CanvasLayer/HelpMenu/ScrollContainer/VBoxContainer" unique_id=1574374783]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_2lg1k")
+theme_override_font_sizes/font_size = 45
+text = "keybinds (/ to close)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Help" type="Label" parent="CanvasLayer/HelpMenu/ScrollContainer/VBoxContainer" unique_id=1468297749]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_2lg1k")
+theme_override_font_sizes/font_size = 17
+text = "help menu (this): ?"
+vertical_alignment = 1
+
+[node name="Move" type="Label" parent="CanvasLayer/HelpMenu/ScrollContainer/VBoxContainer" unique_id=701983152]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_2lg1k")
+theme_override_font_sizes/font_size = 17
+text = "move forward/backward: w/s"
+vertical_alignment = 1
+
+[node name="Rotate" type="Label" parent="CanvasLayer/HelpMenu/ScrollContainer/VBoxContainer" unique_id=254086917]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_2lg1k")
+theme_override_font_sizes/font_size = 17
+text = "rotate left/right: a/d"
+vertical_alignment = 1
+
+[node name="Remove" type="Label" parent="CanvasLayer/HelpMenu/ScrollContainer/VBoxContainer" unique_id=167340608]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_2lg1k")
+theme_override_font_sizes/font_size = 17
+text = "remove building: right-click"
+vertical_alignment = 1
+
+[node name="BasicExtractor" type="Label" parent="CanvasLayer/HelpMenu/ScrollContainer/VBoxContainer" unique_id=1622948995]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_2lg1k")
+theme_override_font_sizes/font_size = 17
+text = "place basic extractor (20 iron, 0.1 * spin ore/s): left-click"
+vertical_alignment = 1
+
+[node name="ElectricExtractor" type="Label" parent="CanvasLayer/HelpMenu/ScrollContainer/VBoxContainer" unique_id=636194453]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_2lg1k")
+theme_override_font_sizes/font_size = 17
+text = "place electric extractor (20 bosons, 1 * spin ore/s): r"
+vertical_alignment = 1
+
+[node name="IronTurbine" type="Label" parent="CanvasLayer/HelpMenu/ScrollContainer/VBoxContainer" unique_id=990807589]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_2lg1k")
+theme_override_font_sizes/font_size = 17
+text = "place iron turbine (40 iron, 0.5 eV/s): t"
+vertical_alignment = 1
+
+[node name="Mine" type="Label" parent="CanvasLayer/HelpMenu/ScrollContainer/VBoxContainer" unique_id=188169890]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_2lg1k")
+theme_override_font_sizes/font_size = 17
+text = "manually mine iron: e"
+vertical_alignment = 1
+
+[node name="Zoom" type="Label" parent="CanvasLayer/HelpMenu/ScrollContainer/VBoxContainer" unique_id=1973141417]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_2lg1k")
+theme_override_font_sizes/font_size = 17
+text = "zoom in/out: scroll wheel"
 vertical_alignment = 1

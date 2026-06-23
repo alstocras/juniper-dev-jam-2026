@@ -9,7 +9,7 @@ var extractorCost: float = 20;
 @onready var warner = $CanvasLayer/Warner
 
 var ironTurbineCost: float = 40;
-var electricExtractorCost: float = 40;
+var electricExtractorCost: float = 20;
 
 @onready var bosonLabel = $CanvasLayer/Bosons;
 var bosonCount: float;
@@ -23,6 +23,8 @@ var fermionSpins: Array = [0.5, 1.5]
 var ironCount: float;
 
 @onready var energyLabel = $CanvasLayer/Energy
+
+@onready var help = $CanvasLayer/HelpMenu;
 
 func _ready() -> void:
 	warner.hide();
@@ -75,6 +77,12 @@ func _process(delta: float) -> void:
 				
 	if Input.is_action_pressed("mineIron") and terrain.get_cell_source_id(activeCell) == 3:
 		ironCount += 0.1;
+		
+	if Input.is_action_just_pressed("openHelp"):
+		help.show();
+	elif Input.is_action_just_pressed("closeHelp"):
+		help.hide();
+	
 	ironLabel.text = str(int(ironCount));
 	energyLabel.text = str(roundi(Global.energyAvailable)) + " eV";
 	Global.totalIron = ironCount;
