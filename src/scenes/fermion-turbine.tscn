@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://da4aj863memdg"]
+
+[ext_resource type="Texture2D" uid="uid://c7uov8432fhay" path="res://assets/sprites/objects/fermion-turbine-generate.png" id="1_ttxnf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oud7o"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjoud"]
+atlas = ExtResource("1_ttxnf")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vruxj"]
+atlas = ExtResource("1_ttxnf")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yqhgb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjoud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vruxj")
+}],
+"loop": true,
+"name": &"generate",
+"speed": 20.0
+}]
+
+[node name="FermionTurbine" type="RigidBody2D" unique_id=976035976]
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=252944392]
+shape = SubResource("RectangleShape2D_oud7o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1029575113]
+sprite_frames = SubResource("SpriteFrames_yqhgb")
+animation = &"generate"
+frame_progress = 0.734688
