@@ -141,7 +141,6 @@ tile_set = SubResource("TileSet_rr2wm")
 
 [node name="Buildings" type="TileMapLayer" parent="." unique_id=100560682]
 z_index = 1
-tile_map_data = PackedByteArray("AAABAAMAAQAAAAAAAgACAAMAAQAAAAAAAgADAAMAAQAAAAAAAgADAAIAAQAAAAAAAgACAAIAAQAAAAAAAgABAAIAAQAAAAAAAgA=")
 tile_set = SubResource("TileSet_dbro3")
 
 [node name="Player" parent="." unique_id=2103953406 instance=ExtResource("2_32aa5")]

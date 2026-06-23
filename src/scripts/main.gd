@@ -8,6 +8,8 @@ var activeCell;
 var extractorCost: float = 20;
 @onready var warner = $CanvasLayer/Warner
 
+var ironTurbineCost: float = 40;
+
 @onready var bosonLabel = $CanvasLayer/Bosons;
 var bosonCount: float;
 var bosonSpins: Array = [0, 1, 2]
@@ -54,14 +56,14 @@ func _process(delta: float) -> void:
 		
 	if Input.is_action_pressed("placeObj"):
 			if ironCount >= extractorCost:
-				if not tMap.get_cell_source_id(activeCell) == 1:
-					tMap.set_cell(activeCell, 0, Vector2i(0, 0), 1);
-					ironCount -= extractorCost;
-			else:
-				if not warner.visible:
-					warner.show()
-					await get_tree().create_timer(1).timeout
-					warner.hide()
+				tMap.set_cell(activeCell, 0, Vector2i(0, 0), 1);
+				ironCount -= extractorCost;
+					
+	if Input.is_action_pressed("placeIronTurbine"):
+		if ironCount >= ironTurbineCost:
+				tMap.set_cell(activeCell, 1, Vector2i(0, 0), 2);
+				ironCount -= ironTurbineCost;
+				
 				
 	if Input.is_action_pressed("mineIron") and terrain.get_cell_source_id(activeCell) == 3:
 		ironCount += 0.1;
