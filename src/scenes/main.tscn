@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dcetdmah4250n" path="res://assets/sprites/objects/fermion.png" id="10_24j03"]
 [ext_resource type="PackedScene" uid="uid://da4aj863memdg" path="res://src/scenes/fermion-turbine.tscn" id="10_50ugh"]
 [ext_resource type="Texture2D" uid="uid://muctjcc86yh4" path="res://assets/sprites/objects/iron.png" id="12_p1ia5"]
+[ext_resource type="AudioStream" uid="uid://bdpbyc3kjgf3c" path="res://assets/audio/sfx/place-object.wav" id="18_yk6rd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5dlwx"]
 texture = ExtResource("3_32aa5")
@@ -349,3 +350,6 @@ theme_override_fonts/font = ExtResource("7_2lg1k")
 theme_override_font_sizes/font_size = 17
 text = "place tunneler extractor (build cost 20 fermions): g"
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=658205685]
+stream = ExtResource("18_yk6rd")
