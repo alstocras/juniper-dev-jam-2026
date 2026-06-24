@@ -43,13 +43,6 @@ func _process(delta: float) -> void:
 	mousePos = tMap.get_local_mouse_position();
 	activeCell = tMap.local_to_map(mousePos);
 	
-	for x in range(-lookrange, lookrange):
-		for y in range(-lookrange, lookrange):
-			if terrain.get_cell_source_id(Vector2i(x, y)) == 2 and tMap.get_cell_source_id(Vector2i(x, y)) == 0:
-				var spin = bosonSpins.pick_random();
-				bosonCount += (0.1 * spin);
-			if terrain.get_cell_source_id(Vector2i(x, y)) == 3 and tMap.get_cell_source_id(Vector2i(x, y)) == 0:
-				ironCount += 0.1;
 				
 	bosonLabel.text = str(int(bosonCount))
 	fermionLabel.text = str(int(fermionCount))
