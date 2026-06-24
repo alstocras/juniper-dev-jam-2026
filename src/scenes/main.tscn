@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://muctjcc86yh4" path="res://assets/sprites/objects/iron.png" id="12_p1ia5"]
 [ext_resource type="AudioStream" uid="uid://bdpbyc3kjgf3c" path="res://assets/audio/sfx/place-object.wav" id="18_yk6rd"]
 [ext_resource type="AudioStream" uid="uid://c7c26yabkqqtm" path="res://assets/audio/sfx/delete-object.wav" id="19_htxff"]
-[ext_resource type="AudioStream" uid="uid://dibflcgns7i1u" path="res://assets/audio/music/the-descent-kevin-macleod.mp3" id="20_v252j"]
+[ext_resource type="AudioStream" uid="uid://d0h0s6dc4xrc7" path="res://assets/audio/music/industrial-cinematic-kevin-macleod.mp3" id="20_v252j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5dlwx"]
 texture = ExtResource("3_32aa5")
@@ -361,5 +361,5 @@ stream = ExtResource("19_htxff")
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=40979334]
 stream = ExtResource("20_v252j")
-volume_db = -12.847
+volume_db = -10.0
 autoplay = true
