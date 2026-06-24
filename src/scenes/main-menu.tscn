@@ -38,3 +38,6 @@ texture_hover = ExtResource("4_1h0ex")
 layout_mode = 2
 texture_normal = ExtResource("4_n5fyx")
 texture_hover = ExtResource("6_58x6t")
+
+[connection signal="pressed" from="CanvasLayer/MainContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
