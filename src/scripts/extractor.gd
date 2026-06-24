@@ -14,12 +14,12 @@ func _process(delta: float) -> void:
 		Global.totalBosons += (0.1 * spin);
 		if not $AnimatedSprite2D.is_playing():
 			$AnimatedSprite2D.play("extract");
-			sound.play();
+			
 	if terrain.get_cell_source_id(myCell) == 3 and tMap.get_cell_source_id(myCell) == 0:
 		Global.totalIron += 0.1;
 		if not $AnimatedSprite2D.is_playing():
 			$AnimatedSprite2D.play("extract");
-			sound.play()
+			
 	else:
 		sound.stop()
 	

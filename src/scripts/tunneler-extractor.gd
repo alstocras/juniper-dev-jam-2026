@@ -25,7 +25,6 @@ func _physics_process(delta: float) -> void:
 			Global.totalIron += 5;
 		Global.energyAvailable -= 2;
 		Global.totalFermions -= 5
-		sound.play()
 		
 		
 		canExtract = false
