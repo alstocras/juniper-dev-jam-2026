@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d3decbaa05gx3" path="res://assets/sprites/objects/electric-extractor.png" id="1_5lifi"]
 [ext_resource type="Script" uid="uid://cj0iyxp7g4fo0" path="res://src/scripts/electric-extractor.gd" id="1_v8qlh"]
+[ext_resource type="AudioStream" uid="uid://dyjwj1477aiiv" path="res://assets/audio/sfx/drill.ogg" id="3_im0bi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcgfy"]
 size = Vector2(16, 16)
@@ -53,3 +54,6 @@ shape = SubResource("RectangleShape2D_rcgfy")
 sprite_frames = SubResource("SpriteFrames_xh1qf")
 animation = &"extract"
 frame_progress = 0.94638366
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=144059308]
+stream = ExtResource("3_im0bi")
