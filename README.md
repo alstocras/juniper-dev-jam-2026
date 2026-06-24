@@ -11,6 +11,8 @@ extract bosons and fermions
 
 - mining/drilling sound: Drill press - Free run by ldezem | License: Creative Commons 0
 
+- tunneler extractor mining: Sound Effect by [LordSonny]("https://pixabay.com/users/lordsonny-38439655/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=194553") from [Pixabay]("https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=194553")
+
 ### background music
 
 - "Industrial Cinematic" Kevin MacLeod (incompetech.com)
