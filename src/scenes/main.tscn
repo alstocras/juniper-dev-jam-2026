@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://da4aj863memdg" path="res://src/scenes/fermion-turbine.tscn" id="10_50ugh"]
 [ext_resource type="Texture2D" uid="uid://muctjcc86yh4" path="res://assets/sprites/objects/iron.png" id="12_p1ia5"]
 [ext_resource type="AudioStream" uid="uid://bdpbyc3kjgf3c" path="res://assets/audio/sfx/place-object.wav" id="18_yk6rd"]
+[ext_resource type="AudioStream" uid="uid://c7c26yabkqqtm" path="res://assets/audio/sfx/delete-object.wav" id="19_htxff"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5dlwx"]
 texture = ExtResource("3_32aa5")
@@ -353,3 +354,6 @@ vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=658205685]
 stream = ExtResource("18_yk6rd")
+
+[node name="Remove" type="AudioStreamPlayer" parent="." unique_id=755106794]
+stream = ExtResource("19_htxff")

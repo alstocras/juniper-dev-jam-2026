@@ -27,6 +27,7 @@ var fermionSpins: Array = [0.5, 1.5]
 var ironCount: float;
 
 @onready var sfx := $AudioStreamPlayer;
+@onready var remove := $Remove
 
 @onready var energyLabel = $CanvasLayer/Energy
 
@@ -51,6 +52,7 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_pressed("removeObj"):
 		tMap.erase_cell(activeCell)
+		remove.play();
 		
 		
 	if Input.is_action_pressed("placeObj"):
