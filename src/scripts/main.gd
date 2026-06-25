@@ -99,7 +99,7 @@ func _process(delta: float) -> void:
 	elif Input.is_action_just_pressed("closeHelp"):
 		help.hide();
 		
-	if bosonCount >= 5000 and ironCount >= 5000 and fermionCount >= 5000:
+	if (bosonCount >= 5000 and ironCount >= 5000 and fermionCount >= 5000) or Input.is_action_just_pressed("debugWin"):
 		get_tree().change_scene_to_file("res://src/scenes/credits.tscn");
 	
 	ironLabel.text = str(int(ironCount));

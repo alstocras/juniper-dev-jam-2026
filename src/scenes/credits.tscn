@@ -18,8 +18,8 @@ alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.4745098, 0.36862746, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
-theme_override_font_sizes/font_size = 128
-text = "credits"
+theme_override_font_sizes/font_size = 120
+text = "angular momentum"
 vertical_alignment = 1
 
 [node name="Stats" type="Label" parent="VBoxContainer" unique_id=180530406]
