@@ -4,6 +4,10 @@
 [ext_resource type="Script" uid="uid://tc5d7rrtksr1" path="res://src/scripts/player-camera.gd" id="2_hwyk6"]
 [ext_resource type="Texture2D" uid="uid://baoyfbvncmee0" path="res://assets/sprites/player/idle.png" id="2_v4rts"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l2v1k"]
+radius = 8.0
+height = 32.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_hwyk6"]
 atlas = ExtResource("2_v4rts")
 region = Rect2(0, 0, 32, 32)
@@ -68,10 +72,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l2v1k"]
-radius = 8.0
-height = 32.0
-
 [node name="Player" type="CharacterBody2D" unique_id=2103953406]
 z_index = 1
 collision_layer = 2
@@ -83,12 +83,12 @@ rotation = 1.5707964
 ignore_rotation = false
 script = ExtResource("2_hwyk6")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=903867619]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_l2v1k")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1244260034]
 rotation = 1.5707964
 sprite_frames = SubResource("SpriteFrames_ya6j6")
 animation = &"idle"
-frame_progress = 0.8166632
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=903867619]
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_l2v1k")
+frame_progress = 0.43922132
