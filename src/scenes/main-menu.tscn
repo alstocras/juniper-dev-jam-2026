@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bkfn5247ha7ib" path="res://assets/branding/play-button-hover.png" id="4_1h0ex"]
 [ext_resource type="Texture2D" uid="uid://caxp7lv0ufjuw" path="res://assets/branding/quit-button.png" id="4_n5fyx"]
 [ext_resource type="Texture2D" uid="uid://dshj42e0aafkg" path="res://assets/branding/quit-button-hover.png" id="6_58x6t"]
-[ext_resource type="AudioStream" uid="uid://dibflcgns7i1u" path="res://assets/audio/music/the-descent-kevin-macleod.mp3" id="7_58x6t"]
+[ext_resource type="AudioStream" uid="uid://b3pejieq6lx3y" path="res://assets/audio/music/menu.wav" id="7_58x6t"]
 
 [node name="MainMenu" type="Node2D" unique_id=2128572243]
 script = ExtResource("1_fqmgj")
