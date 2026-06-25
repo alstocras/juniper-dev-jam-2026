@@ -1,24 +1,20 @@
 [gd_scene format=3 uid="uid://4gla038rjrr"]
 
 [ext_resource type="FontFile" uid="uid://6n3i0td75b8m" path="res://assets/fonts/jbmono.ttf" id="1_vfw02"]
+[ext_resource type="Script" uid="uid://bhi4ne4mb6xpv" path="res://src/scripts/credits.gd" id="1_y1npw"]
 
 [node name="Credits" type="Node2D" unique_id=836274544]
+script = ExtResource("1_y1npw")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1686940266]
-offset_top = 315.0
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1595631085]
+offset_top = 700.0
 offset_right = 1248.0
-offset_bottom = 315.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=1595631085]
-layout_mode = 0
-offset_top = -315.0
-offset_right = 1248.0
-offset_bottom = -4.0
+offset_bottom = 1920.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Title" type="Label" parent="ColorRect/VBoxContainer" unique_id=618630309]
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=618630309]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.4745098, 0.36862746, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
@@ -26,7 +22,7 @@ theme_override_font_sizes/font_size = 128
 text = "credits"
 vertical_alignment = 1
 
-[node name="Stats" type="Label" parent="ColorRect/VBoxContainer" unique_id=180530406]
+[node name="Stats" type="Label" parent="VBoxContainer" unique_id=180530406]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
@@ -34,21 +30,21 @@ theme_override_font_sizes/font_size = 28
 text = "you had 0 iron, 0 bosons, 0 fermions, and a total of 0 eV"
 vertical_alignment = 1
 
-[node name="Spacer" type="Label" parent="ColorRect/VBoxContainer" unique_id=1097833570]
+[node name="Spacer" type="Label" parent="VBoxContainer" unique_id=1097833570]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
 theme_override_font_sizes/font_size = 28
 vertical_alignment = 1
 
-[node name="Spacer2" type="Label" parent="ColorRect/VBoxContainer" unique_id=541332482]
+[node name="Spacer2" type="Label" parent="VBoxContainer" unique_id=541332482]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
 theme_override_font_sizes/font_size = 28
 vertical_alignment = 1
 
-[node name="Alstocras" type="Label" parent="ColorRect/VBoxContainer" unique_id=329938530]
+[node name="Alstocras" type="Label" parent="VBoxContainer" unique_id=329938530]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
@@ -56,7 +52,7 @@ theme_override_font_sizes/font_size = 28
 text = "art and programming: алстокрас (github: alstocras)"
 vertical_alignment = 1
 
-[node name="Arachnent" type="Label" parent="ColorRect/VBoxContainer" unique_id=1855997037]
+[node name="Arachnent" type="Label" parent="VBoxContainer" unique_id=1855997037]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
@@ -64,7 +60,7 @@ theme_override_font_sizes/font_size = 28
 text = "menu music and playtesting: arachnent (github: nitroqwert)"
 vertical_alignment = 1
 
-[node name="Shaboy" type="Label" parent="ColorRect/VBoxContainer" unique_id=285091519]
+[node name="Shaboy" type="Label" parent="VBoxContainer" unique_id=285091519]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
@@ -72,14 +68,14 @@ theme_override_font_sizes/font_size = 28
 text = "playtesting and ideation: shaboy (github: shaboy20)"
 vertical_alignment = 1
 
-[node name="Spacer4" type="Label" parent="ColorRect/VBoxContainer" unique_id=1770716382]
+[node name="Spacer4" type="Label" parent="VBoxContainer" unique_id=1770716382]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
 theme_override_font_sizes/font_size = 28
 vertical_alignment = 1
 
-[node name="Licence" type="Label" parent="ColorRect/VBoxContainer" unique_id=1612552819]
+[node name="Licence" type="Label" parent="VBoxContainer" unique_id=1612552819]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
@@ -87,14 +83,14 @@ theme_override_font_sizes/font_size = 28
 text = "this game is licensed under the gnu general public licence v3"
 vertical_alignment = 1
 
-[node name="Spacer3" type="Label" parent="ColorRect/VBoxContainer" unique_id=2111229709]
+[node name="Spacer3" type="Label" parent="VBoxContainer" unique_id=2111229709]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
 theme_override_font_sizes/font_size = 28
 vertical_alignment = 1
 
-[node name="ExternalHelp" type="Label" parent="ColorRect/VBoxContainer" unique_id=1137160441]
+[node name="ExternalHelp" type="Label" parent="VBoxContainer" unique_id=1137160441]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
@@ -102,14 +98,14 @@ theme_override_font_sizes/font_size = 28
 text = "the gameplay and credits music isnt ours though:"
 vertical_alignment = 1
 
-[node name="Spacer5" type="Label" parent="ColorRect/VBoxContainer" unique_id=1690575794]
+[node name="Spacer5" type="Label" parent="VBoxContainer" unique_id=1690575794]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
 theme_override_font_sizes/font_size = 28
 vertical_alignment = 1
 
-[node name="ExternalHelp2" type="Label" parent="ColorRect/VBoxContainer" unique_id=1960594996]
+[node name="ExternalHelp2" type="Label" parent="VBoxContainer" unique_id=1960594996]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
@@ -117,7 +113,7 @@ theme_override_font_sizes/font_size = 28
 text = "\"Industrial Cinematic\", \"Crusade - Heavy Industry\""
 vertical_alignment = 1
 
-[node name="ExternalHelp3" type="Label" parent="ColorRect/VBoxContainer" unique_id=901800916]
+[node name="ExternalHelp3" type="Label" parent="VBoxContainer" unique_id=901800916]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
@@ -125,7 +121,7 @@ theme_override_font_sizes/font_size = 28
 text = "by Kevin MacLeod (incompetech.com)"
 vertical_alignment = 1
 
-[node name="ExternalHelp4" type="Label" parent="ColorRect/VBoxContainer" unique_id=1113290580]
+[node name="ExternalHelp4" type="Label" parent="VBoxContainer" unique_id=1113290580]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
@@ -133,7 +129,7 @@ theme_override_font_sizes/font_size = 28
 text = "licensed under CC BY 4.0"
 vertical_alignment = 1
 
-[node name="ExternalHelp5" type="Label" parent="ColorRect/VBoxContainer" unique_id=1314422999]
+[node name="ExternalHelp5" type="Label" parent="VBoxContainer" unique_id=1314422999]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
@@ -141,14 +137,29 @@ theme_override_font_sizes/font_size = 28
 text = "(https://creativecommons.org/licenses/by/4.0/)"
 vertical_alignment = 1
 
-[node name="Spacer6" type="Label" parent="ColorRect/VBoxContainer" unique_id=716637540]
+[node name="Spacer10" type="Label" parent="VBoxContainer" unique_id=233787093]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
 theme_override_font_sizes/font_size = 28
 vertical_alignment = 1
 
-[node name="GameSource" type="Label" parent="ColorRect/VBoxContainer" unique_id=1374329611]
+[node name="ExternalHelp6" type="Label" parent="VBoxContainer" unique_id=1889924635]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
+theme_override_fonts/font = ExtResource("1_vfw02")
+theme_override_font_sizes/font_size = 28
+text = "the sfx arent ours either; find the credits in the game desc or repo"
+vertical_alignment = 1
+
+[node name="Spacer6" type="Label" parent="VBoxContainer" unique_id=716637540]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
+theme_override_fonts/font = ExtResource("1_vfw02")
+theme_override_font_sizes/font_size = 28
+vertical_alignment = 1
+
+[node name="GameSource" type="Label" parent="VBoxContainer" unique_id=1374329611]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
@@ -156,7 +167,7 @@ theme_override_font_sizes/font_size = 28
 text = "you can view the source code of the game at the github repository:"
 vertical_alignment = 1
 
-[node name="GameSource2" type="Label" parent="ColorRect/VBoxContainer" unique_id=312514794]
+[node name="GameSource2" type="Label" parent="VBoxContainer" unique_id=312514794]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
@@ -164,14 +175,14 @@ theme_override_font_sizes/font_size = 28
 text = "https://github.com/alstocras/angular-momentum"
 vertical_alignment = 1
 
-[node name="Spacer7" type="Label" parent="ColorRect/VBoxContainer" unique_id=1464168499]
+[node name="Spacer7" type="Label" parent="VBoxContainer" unique_id=1464168499]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
 theme_override_font_sizes/font_size = 28
 vertical_alignment = 1
 
-[node name="Disclaimer" type="Label" parent="ColorRect/VBoxContainer" unique_id=1216019252]
+[node name="Disclaimer" type="Label" parent="VBoxContainer" unique_id=1216019252]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
@@ -179,21 +190,21 @@ theme_override_font_sizes/font_size = 28
 text = "this is, in no way, scientfically accurate. "
 vertical_alignment = 1
 
-[node name="Spacer8" type="Label" parent="ColorRect/VBoxContainer" unique_id=2146868572]
+[node name="Spacer8" type="Label" parent="VBoxContainer" unique_id=2146868572]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
 theme_override_font_sizes/font_size = 28
 vertical_alignment = 1
 
-[node name="Spacer9" type="Label" parent="ColorRect/VBoxContainer" unique_id=170850999]
+[node name="Spacer9" type="Label" parent="VBoxContainer" unique_id=170850999]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
 theme_override_font_sizes/font_size = 28
 vertical_alignment = 1
 
-[node name="Name" type="Label" parent="ColorRect/VBoxContainer" unique_id=1960162769]
+[node name="Name" type="Label" parent="VBoxContainer" unique_id=1960162769]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("1_vfw02")
