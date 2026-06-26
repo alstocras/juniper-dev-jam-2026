@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 				$AnimatedSprite2D.play("generate")
 	else:
 		var spin = potentialSpins.pick_random();
-		Global.energyAvailable += spin * delta
+		Global.energyAvailable += 5 * spin * delta
 		costTimer -= delta
 		if costTimer <= 0:
 			generating = false

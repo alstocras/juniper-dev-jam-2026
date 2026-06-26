@@ -5,6 +5,8 @@ var tMap = Global.buildingMap;
 
 var canExtract: bool = true;
 
+@onready var sound = $AudioStreamPlayer2D;
+
 var bosonSpins: Array = [0, 1, 2];
 var fermionSpins: Array = [0.5, 1.5]
 

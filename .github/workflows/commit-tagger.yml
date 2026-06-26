@@ -122,7 +122,6 @@ jobs:
           generate_release_notes: true
 
       - name: Setup butler
-        if: steps.tagger.outputs.is_release == 'true'
         run: |
           wget -q https://broth.itch.ovh/butler/linux-amd64/LATEST -O butler.zip
           unzip -q butler.zip -d butler
@@ -130,7 +129,6 @@ jobs:
           echo "$PWD/butler" >> "$GITHUB_PATH"
 
       - name: Deploy to Itch.io
-        if: steps.tagger.outputs.is_release == 'true'
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
         run: |

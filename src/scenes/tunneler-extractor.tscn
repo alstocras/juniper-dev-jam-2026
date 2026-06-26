@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://chosxfjb8e17h" path="res://src/scripts/tunneler-extractor.gd" id="1_mvqkm"]
 [ext_resource type="Texture2D" uid="uid://cpihu18qhosja" path="res://assets/sprites/objects/tunneler-extractor.png" id="1_yjhj8"]
+[ext_resource type="AudioStream" uid="uid://cn25xbweakpci" path="res://assets/audio/sfx/tunneler-extract.mp3" id="3_wwr58"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qdc65"]
 size = Vector2(16, 16)
@@ -53,3 +54,7 @@ shape = SubResource("RectangleShape2D_qdc65")
 sprite_frames = SubResource("SpriteFrames_ektxx")
 animation = &"extract"
 frame_progress = 0.85897064
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=948668090]
+stream = ExtResource("3_wwr58")
+volume_db = -10.0

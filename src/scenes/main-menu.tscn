@@ -1,25 +1,64 @@
 [gd_scene format=3 uid="uid://d3dqyoaeaefs6"]
 
 [ext_resource type="Script" uid="uid://bj1cqu5vwwwjj" path="res://src/scripts/main-menu.gd" id="1_fqmgj"]
+[ext_resource type="FontFile" uid="uid://6n3i0td75b8m" path="res://assets/fonts/jbmono.ttf" id="2_hsqdw"]
+[ext_resource type="AudioStream" uid="uid://dibflcgns7i1u" path="res://assets/audio/music/the-descent-kevin-macleod.mp3" id="3_hsqdw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0vgna"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hsqdw"]
+bg_color = Color(1, 0.4745098, 0.36862746, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vgna"]
+bg_color = Color(1, 0.4745098, 0.36862746, 1)
 
 [node name="MainMenu" type="Node2D" unique_id=2128572243]
 script = ExtResource("1_fqmgj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1293568746]
 
-[node name="Play" type="Button" parent="CanvasLayer" unique_id=1344119342]
-offset_left = 67.0
-offset_top = 226.0
-offset_right = 1014.0
-offset_bottom = 342.0
+[node name="MainContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1449173997]
+offset_right = 1150.0
+offset_bottom = 649.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MainContainer" unique_id=1430175852]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(1, 0.4745098, 0.36862746, 1)
+theme_override_fonts/normal_font = ExtResource("2_hsqdw")
+theme_override_font_sizes/normal_font_size = 115
+text = "angular momentum"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainContainer" unique_id=85769128]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Play" type="Button" parent="CanvasLayer/MainContainer/VBoxContainer" unique_id=1611613032]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
+theme_override_fonts/font = ExtResource("2_hsqdw")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0vgna")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hsqdw")
 text = "play"
 
-[node name="Quit" type="Button" parent="CanvasLayer" unique_id=945693608]
-offset_left = 74.0
-offset_top = 406.0
-offset_right = 1017.0
-offset_bottom = 511.0
+[node name="Quit" type="Button" parent="CanvasLayer/MainContainer/VBoxContainer" unique_id=2061932081]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
+theme_override_fonts/font = ExtResource("2_hsqdw")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0vgna")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0vgna")
 text = "quit"
 
-[connection signal="pressed" from="CanvasLayer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="CanvasLayer/Quit" to="." method="_on_quit_pressed"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=215328421]
+stream = ExtResource("3_hsqdw")
+volume_db = -5.0
+autoplay = true
+
+[connection signal="pressed" from="CanvasLayer/MainContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

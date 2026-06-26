@@ -26,12 +26,18 @@ var fermionSpins: Array = [0.5, 1.5]
 @onready var ironLabel = $CanvasLayer/Iron;
 var ironCount: float;
 
+@onready var sfx := $Place;
+@onready var remove := $Remove
+
 @onready var energyLabel = $CanvasLayer/Energy
 
 @onready var help = $CanvasLayer/HelpMenu;
+@onready var book = $CanvasLayer/Guidebook;
 
 func _ready() -> void:
 	warner.hide();
+	help.show();
+	book.hide();
 
 func _process(delta: float) -> void:
 	var lookrange = Global.lookRange;
@@ -49,37 +55,44 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_pressed("removeObj"):
 		tMap.erase_cell(activeCell)
+		remove.play();
 		
 		
 	if Input.is_action_pressed("placeObj"):
 			if ironCount >= extractorCost:
 				tMap.set_cell(activeCell, 0, Vector2i(0, 0), 1);
 				ironCount -= extractorCost;
+				sfx.play();
 					
 	if Input.is_action_pressed("placeIronTurbine"):
 		if ironCount >= ironTurbineCost:
 				tMap.set_cell(activeCell, 1, Vector2i(0, 0), 2);
 				ironCount -= ironTurbineCost;
+				sfx.play();
 	
 	if Input.is_action_pressed("placeTunnelerExtractor"):
 		if fermionCount >= tunnelerExtractorCost:
 				tMap.set_cell(activeCell, 0, Vector2i(0, 0), 5);
 				fermionCount -= tunnelerExtractorCost;
+				sfx.play();
 				
 	if Input.is_action_pressed("placeElectricExtractor"):
 		if bosonCount >= electricExtractorCost:
 			tMap.set_cell(activeCell, 0, Vector2i(0, 0), 3);
 			bosonCount -= electricExtractorCost
+			sfx.play();
 				
 	if Input.is_action_pressed("placeBosonTurbine"):
 		if bosonCount >= bosonTurbineCost:
 				tMap.set_cell(activeCell, 1, Vector2i(0, 0), 4);
 				bosonCount -= bosonTurbineCost;
+				sfx.play();
 				
 	if Input.is_action_pressed("placeFermionTurbine"):
 		if fermionCount >= fermionTurbineCost:
 				tMap.set_cell(activeCell, 1, Vector2i(0, 0), 6);
 				fermionCount -= fermionTurbineCost;
+				sfx.play();
 				
 	if Input.is_action_pressed("mineIron") and terrain.get_cell_source_id(activeCell) == 3:
 		ironCount += 0.1;
@@ -88,6 +101,15 @@ func _process(delta: float) -> void:
 		help.show();
 	elif Input.is_action_just_pressed("closeHelp"):
 		help.hide();
+		
+	if Input.is_action_just_pressed("openReference"):
+		book.show();
+	elif Input.is_action_just_pressed("closeReference"):
+		book.hide();
+		
+	# REMOVE THIS DEBUG WIN COMMAND
+	if (bosonCount >= 5000 and ironCount >= 5000 and fermionCount >= 5000) or Input.is_action_just_pressed("debugWin"):
+		get_tree().change_scene_to_file("res://src/scenes/credits.tscn");
 	
 	ironLabel.text = str(int(ironCount));
 	energyLabel.text = str(roundi(Global.energyAvailable)) + " eV";
