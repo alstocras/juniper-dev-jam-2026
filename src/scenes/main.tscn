@@ -376,6 +376,14 @@ theme_override_font_sizes/font_size = 17
 text = "place tunneler extractor (build cost 20 fermions): g"
 vertical_alignment = 1
 
+[node name="Reference" type="Label" parent="CanvasLayer/HelpMenu/ScrollContainer/VBoxContainer" unique_id=1365215188]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
+theme_override_fonts/font = ExtResource("7_2lg1k")
+theme_override_font_sizes/font_size = 17
+text = "open reference: shift+b"
+vertical_alignment = 1
+
 [node name="Guidebook" type="ColorRect" parent="CanvasLayer" unique_id=480843029]
 anchors_preset = 8
 anchor_left = 0.5
@@ -405,9 +413,10 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.4745098, 0.36862746, 1)
 theme_override_fonts/font = ExtResource("7_2lg1k")
 theme_override_font_sizes/font_size = 45
-text = "building reference"
+text = "building reference (b to close)"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="BasicExtractor" type="Label" parent="CanvasLayer/Guidebook/ScrollContainer/VBoxContainer" unique_id=1411162441]
 layout_mode = 2
@@ -634,6 +643,28 @@ theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("7_2lg1k")
 theme_override_font_sizes/font_size = 17
 text = "6.3. consumes: 5 fermions/s"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1351404092]
+offset_top = 600.0
+offset_right = 359.0
+offset_bottom = 649.0
+theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
+theme_override_colors/font_shadow_color = Color(0.11372549, 0.11372549, 0.13725491, 1)
+theme_override_fonts/font = ExtResource("7_2lg1k")
+theme_override_font_sizes/font_size = 32
+text = "press shift+b for reference"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=1865842591]
+offset_top = 554.0
+offset_right = 403.0
+offset_bottom = 603.0
+theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
+theme_override_colors/font_shadow_color = Color(0.11372549, 0.11372549, 0.13725491, 1)
+theme_override_fonts/font = ExtResource("7_2lg1k")
+theme_override_font_sizes/font_size = 32
+text = "press shift+/ for help"
 vertical_alignment = 1
 
 [node name="Place" type="AudioStreamPlayer" parent="." unique_id=658205685]
