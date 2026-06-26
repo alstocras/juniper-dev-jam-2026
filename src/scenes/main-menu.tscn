@@ -6,6 +6,12 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0vgna"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hsqdw"]
+bg_color = Color(1, 0.4745098, 0.36862746, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vgna"]
+bg_color = Color(1, 0.4745098, 0.36862746, 1)
+
 [node name="MainMenu" type="Node2D" unique_id=2128572243]
 script = ExtResource("1_fqmgj")
 
@@ -36,6 +42,7 @@ theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("2_hsqdw")
 theme_override_font_sizes/font_size = 72
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0vgna")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hsqdw")
 text = "play"
 
 [node name="Quit" type="Button" parent="CanvasLayer/MainContainer/VBoxContainer" unique_id=2061932081]
@@ -45,6 +52,7 @@ theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("2_hsqdw")
 theme_override_font_sizes/font_size = 72
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0vgna")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0vgna")
 text = "quit"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=215328421]
