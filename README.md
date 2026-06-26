@@ -15,12 +15,10 @@ extract bosons and fermions
 
 ### background music
 
-- "Industrial Cinematic, Crusade - Heavy Industry"
+- "Industrial Cinematic, Crusade - Heavy Industry", "The Descent"
 Kevin MacLeod <incompetech.com>
 Licensed under Creative Commons: By Attribution 4.0
   <http://creativecommons.org/licenses/by/4.0/>
-
-- "6184755233685504", @arachnent on discord, CC0
 
 ### godot
 
