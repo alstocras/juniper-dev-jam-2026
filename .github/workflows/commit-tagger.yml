@@ -123,7 +123,7 @@ jobs:
 
       - name: Setup butler
         run: |
-          wget -q https://broth.itch.ovh/butler/linux-amd64/LATEST -O butler.zip
+          curl -L -o butler.zip https://github.com/itchio/butler/releases/latest/download/butler-linux-amd64.zip
           unzip -q butler.zip -d butler
           chmod +x butler/butler
           echo "$PWD/butler" >> "$GITHUB_PATH"
