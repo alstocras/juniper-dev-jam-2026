@@ -32,10 +32,12 @@ var ironCount: float;
 @onready var energyLabel = $CanvasLayer/Energy
 
 @onready var help = $CanvasLayer/HelpMenu;
+@onready var book = $CanvasLayer/Guidebook;
 
 func _ready() -> void:
 	warner.hide();
 	help.show();
+	book.hide();
 
 func _process(delta: float) -> void:
 	var lookrange = Global.lookRange;
@@ -99,6 +101,11 @@ func _process(delta: float) -> void:
 		help.show();
 	elif Input.is_action_just_pressed("closeHelp"):
 		help.hide();
+		
+	if Input.is_action_just_pressed("openReference"):
+		book.show();
+	elif Input.is_action_just_pressed("closeReference"):
+		book.hide();
 		
 	# REMOVE THIS DEBUG WIN COMMAND
 	if (bosonCount >= 5000 and ironCount >= 5000 and fermionCount >= 5000) or Input.is_action_just_pressed("debugWin"):

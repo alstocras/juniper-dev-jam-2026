@@ -480,6 +480,45 @@ theme_override_font_sizes/font_size = 17
 text = "2.3. consumes: 2 eV/s"
 vertical_alignment = 1
 
+[node name="Spacer2" type="Label" parent="CanvasLayer/Guidebook/ScrollContainer/VBoxContainer" unique_id=1045709603]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
+theme_override_fonts/font = ExtResource("7_2lg1k")
+theme_override_font_sizes/font_size = 17
+vertical_alignment = 1
+
+[node name="TE" type="Label" parent="CanvasLayer/Guidebook/ScrollContainer/VBoxContainer" unique_id=1437827219]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
+theme_override_fonts/font = ExtResource("7_2lg1k")
+theme_override_font_sizes/font_size = 17
+text = "3. tunneler extractor"
+vertical_alignment = 1
+
+[node name="TECost" type="Label" parent="CanvasLayer/Guidebook/ScrollContainer/VBoxContainer" unique_id=825791351]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
+theme_override_fonts/font = ExtResource("7_2lg1k")
+theme_override_font_sizes/font_size = 17
+text = "3.1. build cost: 20 fermions"
+vertical_alignment = 1
+
+[node name="TEOut" type="Label" parent="CanvasLayer/Guidebook/ScrollContainer/VBoxContainer" unique_id=1656353653]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
+theme_override_fonts/font = ExtResource("7_2lg1k")
+theme_override_font_sizes/font_size = 17
+text = "3.2. mining speed: iron 5/frame, bosons 5spin/frame, fermions 5spin/frame"
+vertical_alignment = 1
+
+[node name="TEIn" type="Label" parent="CanvasLayer/Guidebook/ScrollContainer/VBoxContainer" unique_id=2008755168]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
+theme_override_fonts/font = ExtResource("7_2lg1k")
+theme_override_font_sizes/font_size = 17
+text = "3.3. consumes: 3 eV/s, 5 fermions/frame"
+vertical_alignment = 1
+
 [node name="Place" type="AudioStreamPlayer" parent="." unique_id=658205685]
 stream = ExtResource("18_yk6rd")
 volume_db = -10.0
