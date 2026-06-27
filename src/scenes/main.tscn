@@ -249,7 +249,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.4745098, 0.36862746, 1)
 theme_override_fonts/font = ExtResource("7_2lg1k")
 theme_override_font_sizes/font_size = 45
-text = "keybinds (/ to close)"
+text = "keybinds (h to close)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -258,7 +258,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("7_2lg1k")
 theme_override_font_sizes/font_size = 17
-text = "help menu (this): ? (shift + /)"
+text = "help menu (this): shift + h"
 vertical_alignment = 1
 
 [node name="Move" type="Label" parent="CanvasLayer/HelpMenu/ScrollContainer/VBoxContainer" unique_id=701983152]
@@ -638,7 +638,7 @@ theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_colors/font_shadow_color = Color(0.11372549, 0.11372549, 0.13725491, 1)
 theme_override_fonts/font = ExtResource("7_2lg1k")
 theme_override_font_sizes/font_size = 32
-text = "press shift+/ for help"
+text = "press shift+h for help"
 vertical_alignment = 1
 
 [node name="Place" type="AudioStreamPlayer" parent="." unique_id=658205685]
