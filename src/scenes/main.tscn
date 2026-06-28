@@ -258,7 +258,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.75686276, 0.7647059, 0.83137256, 1)
 theme_override_fonts/font = ExtResource("7_2lg1k")
 theme_override_font_sizes/font_size = 17
-text = "help menu (this): shift + h"
+text = "help menu (this): shift+h"
 vertical_alignment = 1
 
 [node name="Move" type="Label" parent="CanvasLayer/HelpMenu/ScrollContainer/VBoxContainer" unique_id=701983152]

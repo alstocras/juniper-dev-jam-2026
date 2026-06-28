@@ -58,41 +58,40 @@ func _process(delta: float) -> void:
 		remove.play();
 		
 		
-	if Input.is_action_pressed("placeObj"):
+	if tMap.get_cell_source_id(activeCell) == -1:
+		if Input.is_action_pressed("placeObj"):
 			if ironCount >= extractorCost:
 				tMap.set_cell(activeCell, 0, Vector2i(0, 0), 1);
 				ironCount -= extractorCost;
-				sfx.play();
 					
-	if Input.is_action_pressed("placeIronTurbine"):
-		if ironCount >= ironTurbineCost:
+		if Input.is_action_pressed("placeIronTurbine"):
+			if ironCount >= ironTurbineCost:
 				tMap.set_cell(activeCell, 1, Vector2i(0, 0), 2);
 				ironCount -= ironTurbineCost;
-				sfx.play();
 	
-	if Input.is_action_pressed("placeTunnelerExtractor"):
-		if fermionCount >= tunnelerExtractorCost:
+		if Input.is_action_pressed("placeTunnelerExtractor"):
+			if fermionCount >= tunnelerExtractorCost:
 				tMap.set_cell(activeCell, 0, Vector2i(0, 0), 5);
 				fermionCount -= tunnelerExtractorCost;
-				sfx.play();
 				
-	if Input.is_action_pressed("placeElectricExtractor"):
-		if bosonCount >= electricExtractorCost:
-			tMap.set_cell(activeCell, 0, Vector2i(0, 0), 3);
-			bosonCount -= electricExtractorCost
-			sfx.play();
+		if Input.is_action_pressed("placeElectricExtractor"):
+			if bosonCount >= electricExtractorCost:
+				tMap.set_cell(activeCell, 0, Vector2i(0, 0), 3);
+				bosonCount -= electricExtractorCost
 				
-	if Input.is_action_pressed("placeBosonTurbine"):
-		if bosonCount >= bosonTurbineCost:
+		if Input.is_action_pressed("placeBosonTurbine"):
+			if bosonCount >= bosonTurbineCost:
 				tMap.set_cell(activeCell, 1, Vector2i(0, 0), 4);
 				bosonCount -= bosonTurbineCost;
-				sfx.play();
 				
-	if Input.is_action_pressed("placeFermionTurbine"):
-		if fermionCount >= fermionTurbineCost:
+				
+		if Input.is_action_pressed("placeFermionTurbine"):
+			if fermionCount >= fermionTurbineCost:
 				tMap.set_cell(activeCell, 1, Vector2i(0, 0), 6);
 				fermionCount -= fermionTurbineCost;
-				sfx.play();
+				
+		
+		sfx.play();
 				
 	if Input.is_action_pressed("mineIron") and terrain.get_cell_source_id(activeCell) == 3:
 		ironCount += 0.1;
